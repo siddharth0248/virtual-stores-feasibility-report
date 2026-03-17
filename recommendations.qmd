@@ -2,6 +2,14 @@
 title: "Recommendations Summary"
 ---
 
+## Design files, chunks, and aggregated chunk manifests around typical use case patterns
+
+The most important design input for a virtual store is a clear understanding of how the data will actually be accessed. Chunk layout and manifest structure should be optimized for the dominant access pattern of the intended user community.
+
+### Example: NISAR time series analysis
+
+For NISAR data where time series analysis is the primary use case, a frame-oriented chunk manifest design ensures efficient per-frame loading. This decision should be made deliberately, with awareness of the trade-offs for other access patterns (see [Known Limitations](limitations.qmd)).
+
 ## Adopt GeoZarr standards
 
 GeoZarr should be adopted for all new virtual store implementations. This ensures geospatial interoperability and positions NASA data for long-term maintainability as the ecosystem matures.

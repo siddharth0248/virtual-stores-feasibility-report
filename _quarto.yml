@@ -9,26 +9,26 @@ website:
         text: Home
       - href: introduction.qmd
         text: Introduction
-      - text: Technical
+      - text: Technical: Overview, Applications and Ecosystem
         menu:
           - href: technical-overview.qmd
             text: Technical Overview
           - href: nasa-applications.qmd
             text: NASA Applications
-      - text: Guidance
+          - href: nasa-ecosystem.qmd
+            text: NASA Ecosystem
+      - text: Guidance: Limitations and Governance
         menu:
           - href: limitations.qmd
             text: Known Limitations
           - href: governance.qmd
             text: Governance
-          - href: best-practices.qmd
-            text: Best Practices
       - href: recommendations.qmd
-        text: Recommendations
+        text: Best Practices + Recommendations
       - href: onboarding.qmd
-        text: Onboarding Guide
+        text: Onboarding Guide + Resources
       - href: examples.qmd
-        text: Examples Library
+        text: Examples
 
 format:
   html:

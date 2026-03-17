@@ -20,7 +20,3 @@ title: "Technical Overview"
 ## Chunk manifest protocol
 
 [UNDER DEVELOPMENT]
-
-## Integration with EGIS
-
-[UNDER DEVELOPMENT]

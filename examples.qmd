@@ -1,9 +1,9 @@
 ---
-title: "Virtualization Examples Library"
+title: "Virtualization Examples"
 subtitle: "Solved patterns across data types and use cases"
 ---
 
-This library collects worked examples of virtual store implementations, serving as a reference for virtual layer producers. Each example documents the data type, chosen approach, design decisions, and lessons learned.
+This page collects worked examples of virtual store implementations, serving as a reference for virtual layer producers. Each example documents the data type, chosen approach, design decisions, and lessons learned.
 
 ## How to use this library
 
@@ -15,7 +15,7 @@ Find the example most similar to your dataset and use case. Adapt the patterns t
 **Virtualization approach:** Collection-level aggregated chunk manifests (Kerchunk)
 **Status:** Production
 
-*(Detailed implementation notes, code snippets, and lessons learned to be added.)*
+[ADD ME: Links to or detailed implementation notes, code snippets, and lessons learned to be added @DeanHenze @edshred2000]
 
 ## Example 2: SAR displacement data — ASF
 
@@ -23,7 +23,7 @@ Find the example most similar to your dataset and use case. Adapt the patterns t
 **Virtualization approach:** TBD
 **Status:** In development
 
-*(Implementation notes to be added as the approach matures.)*
+[ADD ME: Links to or detailed implementation notes, code snippets, and lessons learned to be added @jhkennedy]
 
 ---
 

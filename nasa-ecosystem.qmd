@@ -1,0 +1,19 @@
+---
+title: "Virtual Stores and the NASA Data System"
+---
+
+There are a number of components to consider when envisioning virtual stores and their place in the broad NASA data ecosystem.
+
+Virtual stores provide a uniform interface to archival data through the Zarr data model and specification. However, to access and visualize this data, the ecosystem needs to adapt to integrate the Zarr data model and specification. While xarray and zarr-python provide powerful tools for working with this data, a number of existing powerful tools at NASA need to be considered to support NASA users.
+
+## Integration with EGIS
+
+[ADDME: @abarciauskas-bgse]
+
+## Integration with Harmony
+
+[ADDME: @owenlittlejohns]
+
+## Discovery and integration with CMR
+
+[ADDME]
