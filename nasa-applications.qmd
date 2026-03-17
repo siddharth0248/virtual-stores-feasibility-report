@@ -1,0 +1,50 @@
+---
+title: "Application of Virtual Store Technology to NASA Data"
+---
+
+## Mature implementations
+
+### Consistently gridded data
+
+Collection-level aggregated chunk manifests have been successfully implemented at PODAAC for consistently gridded datasets. This represents the most mature pattern and is recommended as the baseline approach for similar data types across DAACs.
+
+[ADD ME: LINKS TO PODAAC DATASETS]
+
+**Characteristics:**
+
+- Consistent spatial and temporal resolution across each variable
+- Uniform chunk grid and compression scheme across each variable
+- Chunk manifest generated at collection level, spanning many granules
+
+## Developing implementations
+
+### Displacement data (NISAR)
+
+Synthetic aperture radar displacement products from ASF are an active area of development for virtual store approaches.
+
+[ADD ME: NISAR solution]
+
+### L2 Data at PODAAC
+
+[ADD ME]
+
+### Ongoing Data
+
+Appending new data to an existing virtual store requires different strategies depending on the underlying technology:
+
+- **Icechunk**: supports transactional appends natively
+- **Kerchunk**: typically requires overwriting the reference JSON
+
+### Non-uniform data
+
+Several data categories present additional complexity:
+
+- Differing grids across granules
+- Varying compression schemes
+- L2 / orbital swath data (non-rectilinear)
+
+These patterns are under active investigation.
+
+## Out of scope / not currently supported
+
+*(Specific data types or patterns that are not currently supported will be enumerated here as they are identified.)*

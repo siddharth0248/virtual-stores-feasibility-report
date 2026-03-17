@@ -1,0 +1,22 @@
+---
+title: "Established Best Practices"
+---
+
+## Design files, chunks, and aggregated chunk manifests around typical use case patterns
+
+The most important design input for a virtual store is a clear understanding of how the data will actually be accessed. Chunk layout and manifest structure should be optimized for the dominant access pattern of the intended user community.
+
+### Example: NISAR time series analysis
+
+For NISAR data where time series analysis is the primary use case, a frame-oriented chunk manifest design ensures efficient per-frame loading. This decision should be made deliberately, with awareness of the trade-offs for other access patterns (see [Known Limitations](limitations.qmd)).
+
+**Recommended steps before designing a virtual store:**
+
+1. Identify the primary user community and their typical workflows
+2. Document the dominant data access patterns (spatial subset, time series, full-collection, etc.)
+3. Design chunk sizes and manifest structure to minimize I/O for those patterns
+4. Document the design decisions and their trade-offs for future maintainers
+
+## Additional best practices
+
+*(Additional best practices will be documented here as they are established through operational experience.)*

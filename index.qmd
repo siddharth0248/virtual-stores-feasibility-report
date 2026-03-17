@@ -1,0 +1,22 @@
+---
+title: "Virtual Stores at NASA"
+subtitle: "A single entrypoint for all NASA datasets"
+---
+
+## What are virtual stores and what do they enable?
+
+Core to virtual store technology is lightweight metadata pointing to data byte ranges in existing files. Virtual store technology enables data users to access subsets of large scientific datasets without downloading, scanning and pre-processing any files. 
+
+## Vision: NASA datasets accessible through a single entrypoint
+
+The long-term vision is that many NASA datasets are discoverable and accessible through a single entrypoint (per dataset). Users will not have to be aware of the underlying data format or storage location.
+
+## Benefits for data users
+
+- Logical dataset access access large number of files, without downloading any data
+- Consistent access patterns across diverse data types
+
+## Benefits for data providers and NASA
+
+- Cost savings through reduced egress and compute
+- Providing analysis-ready access to existing archives without reformatting

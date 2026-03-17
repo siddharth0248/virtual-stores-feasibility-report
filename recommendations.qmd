@@ -1,0 +1,19 @@
+---
+title: "Recommendations Summary"
+---
+
+## Adopt GeoZarr standards
+
+GeoZarr should be adopted for all new virtual store implementations. This ensures geospatial interoperability and positions NASA data for long-term maintainability as the ecosystem matures.
+
+## Engage with the evolving chunk manifest protocol
+
+TBD: The chunk manifest protocol specification is speculative at this time.
+
+## Prioritize EGIS integration planning
+
+Integration with the Earthdata Geographic Information System (EGIS) has been identified as a future priority. Scoping should begin to ensure integration with EGIS is smooth.
+
+## Address governance gaps identified in Section 6
+
+The governance decisions identified in [Governance](governance.qmd) — metadata placement standards, versioning policies, and stewardship ownership — should be resolved before virtual store technology is deployed more broadly across DAACs.

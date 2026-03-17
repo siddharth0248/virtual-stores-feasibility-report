@@ -1,0 +1,42 @@
+---
+title: "Onboarding Guide"
+subtitle: "Getting started with data virtualization"
+---
+
+This guide is intended for data providers and engineers who are new to virtual store technology and want to begin virtualizing NASA datasets.
+
+## Prerequisites
+
+*(List required background knowledge, tools, and access credentials.)*
+
+## Step 1: Understand your data
+
+Before virtualizing, document:
+
+- File format (NetCDF, HDF5, GeoTIFF, etc.)
+- Grid structure (uniform, non-uniform, swath)
+- Typical file sizes and granule counts
+- Primary user access patterns
+
+## Step 2: Choose a virtualization approach
+
+| Approach | Best for | Status |
+|---|---|---|
+| Kerchunk | Reference files for existing archives | Mature |
+| Icechunk | Transactional stores, appending data | Active development |
+
+## Step 3: Design your chunk manifest
+
+Refer to [Best Practices](best-practices.qmd) and [Known Limitations](limitations.qmd) before finalizing your chunk layout.
+
+## Step 4: Generate and validate your virtual store
+
+*(Step-by-step instructions and code examples to be added.)*
+
+## Step 5: Register and publish
+
+*(Instructions for registering your virtual store with the relevant DAAC and making it discoverable.)*
+
+## Getting help
+
+*(Links to community resources, Slack channels, issue trackers, etc.)*
