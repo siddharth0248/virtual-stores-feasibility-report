@@ -1,0 +1,22 @@
+---
+title: "Technical Overview"
+---
+
+## Core concepts
+
+[ADD ME: DIAGRAM]
+
+* **Zarr** is a chunked, compressed array storage specification and format. Zarr is designed for cloud-native (network-addressable chunks in object storage) access. Zarr is the proposed specification for structuring virtual stores at NASA.
+* **Chunk manifests** are lightweight metadata structures that describe a mapping from logical data space to where that data is stored. Another term for chunk manifests is an "indirection layer". Icechunk and Kerchunk are 2 common implementations of chunk manifests.
+* **[Icechunk](https://icechunk.io/)** is a transactional storage engine for Zarr arrays. Icechunk stores chunk manifests which it calls [virtual datasets](https://icechunk.io/en/stable/virtual/).
+* **Kerchunk** is an early approach to creating chunk manifests (what it calls reference files) which maps virtual Zarr array coordinates to byte ranges in existing files using the JSON or Parquet file formats for persistence.
+
+## GeoZarr and multiscales
+
+[GeoZarr](https://geozarr.org/) extends Zarr with geospatial conventions. including coordinate reference systems and spatial metadata. Multiscale representations allow efficient access at varying levels of aggregation.
+
+**Adoption of GeoZarr is recommended** for future virtual store implementations to ensure interoperability and long-term maintainability. Adoption of multiscales should be considered, especially for high resolution data.
+
+## Chunk manifest protocol
+
+[UNDER DEVELOPMENT]

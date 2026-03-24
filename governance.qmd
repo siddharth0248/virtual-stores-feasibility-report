@@ -1,0 +1,29 @@
+---
+title: "Governance Decisions Required"
+---
+
+## Metadata placement standards
+
+Clear standards are needed for where metadata lives within the Common Metadata Repository (CMR) metadata models.
+
+### Collection-level metadata
+
+*(Define what metadata belongs at the collection level and how it should be structured.)*
+
+### Granule-level metadata
+
+*(Define what metadata belongs at the granule level and how it relates to collection-level metadata.)*
+
+## Versioning and update policies for virtual layers
+
+Virtual stores are living artifacts that will need to be updated as source data is corrected, reprocessed, or extended. Policies are needed to govern:
+
+- When and how virtual store versions are incremented
+- How consumers are notified of updates
+- How to handle backward compatibility
+
+*(Versioning policies to be defined.)*
+
+## Ownership and stewardship of virtual store assets
+
+*(Define which teams or DAACs are responsible for creating, maintaining, and deprecating virtual store assets for each dataset type.)*

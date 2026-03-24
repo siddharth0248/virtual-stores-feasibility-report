@@ -1,0 +1,14 @@
+---
+title: "Known Limitations"
+---
+
+## Language and ecosystem constraints
+
+Icechunk is written in Rust with an API in Python. Users and data providers working in other languages (Julia, R, Java, etc.) may face limited or no support for reading and writing Icechunk stores.
+
+## Early structural decisions have lasting performance consequences
+
+File chunking and chunk manifests cannot simultaneously optimize for all use cases. Further, chunk manifests depend on the chunking already inherent to the files. You cannot create a chunk manifest to access a unit smaller than chunks in the underlying files. The implication is, for example, if a set of files is optimized for spatial access it cannot simultaneously be optimized for access across the time dimension (i.e. time series).
+
+[ADD ME: DIAGRAM OF PANCAKES AND CHURROS]
+
