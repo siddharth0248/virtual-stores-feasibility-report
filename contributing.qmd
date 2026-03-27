@@ -2,22 +2,23 @@
 title: "Contributing"
 ---
 
-Thank you for considering contributing to this guide, which is intended to be a community-developed resource.
-
 We welcome PRs to this repo from anyone. If you open a PR with new or revised content, please add yourself to the authors list in `index.qmd`.
 
-This site uses [Quarto] to generate website pages using Quarto Markdown
+This site uses [Quarto](https://quarto.org/) to generate website pages using markdown and jupyter notebooks.
 
 ## Adding pages
 
-- create qmd file
-- add to navigation in _quarto.yml
+To add a new page:
+1. Create new `.qmd` or `.ipynb` file
+2. Add the new page to the `sidebar` section in `_quarto.yml` so it shows up in the sidebar navigation
 
 ## Previews
 
-## Installation
+To preview changes, you can run this site locally (see instructions to setup quarto locally below) or use the automated preview generation when opening a PR (see [the PR preview workflow](./.github/workflows/pr-preview.yml)).
 
-### Quarto
+## Local Development
+
+### Install Quarto
 
 Install Quarto by downloading the installer for your platform from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), or via a package manager:
 
@@ -27,7 +28,7 @@ Install Quarto by downloading the installer for your platform from [quarto.org/d
 
 Verify the installation with `quarto check`.
 
-## Development
+### Run quarto commands
 
 To preview the site locally:
 
@@ -36,11 +37,3 @@ quarto preview
 ```
 
 This runs `quarto preview`, which serves the site and reloads on changes.
-
-To publish to GitHub Pages:
-
-```bash
-quarto publish gh-page
-```
-
-This renders the site and pushes the output to the `gh-pages` branch. On first use, Quarto will prompt you to confirm the target repository. Ensure GitHub Pages is enabled in the repository settings (Settings → Pages → Source: `gh-pages` branch).
