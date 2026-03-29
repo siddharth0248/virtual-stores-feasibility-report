@@ -1,19 +1,20 @@
 ---
 title: "Virtual Stores at NASA"
 subtitle: "Unifying access to NASA datasets"
-authors: Aimee Barciauskas
+authors: Aimee Barciauskas, Ed Armstrong
 ---
 
 ⚠️ UNDER DEVELOPMENT ⚠️
 
 ## Vision: NASA datasets accessible through a single entrypoint
 
-Virtual stores will unify many NASA datasets through the Zarr data model. Long-term, this will enable:
+<img style="height: 150px; margin: 0px auto; display: block" alt="Simple Virtual Zarr Graphic" src="./graphics/simple-virtual-zarr.svg" />
 
-* Many NASA datasets will be discoverable and accessible through a single entrypoint per dataset.
-* Less pre-processing to be analysis-ready.
-* Users will not have to know about the underlying data format or storage location.
-* A common API for reading, writing and analyzing NASA datasets. A common API will make these datasets more accessible and interoperable.
+Virtual stores deliver a single entrypoint to a dataset comprised of many files. For NASA datasets this enables:
+
+* Less pre-processing to be "analysis-ready".
+* Users do not have to know about the underlying data format or storage location.
+* Greater interoperability through a common API for reading, writing and analyzing complex and heterogeneous NASA datasets. 
 
 ## What are virtual stores and what do they enable?
 
