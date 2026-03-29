@@ -29,7 +29,7 @@ website:
       - href: recommendations.qmd
         text: Best Practices + Recommendations
       - href: onboarding.qmd
-        text: Onboarding Guide + Resources
+        text: Onboarding Guide
       - href: examples.qmd
         text: Examples
       - href: contributing.qmd
