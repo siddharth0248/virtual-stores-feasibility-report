@@ -6,7 +6,8 @@ website:
   title: "Virtual Store Feasibility Report"
   sidebar:
     pinned: true
-    align: center  
+    align: center
+    logo: graphics/nasa-logo.png
     contents:
       - href: index.qmd
         text: Home
@@ -39,5 +40,5 @@ website:
 
 format:
   html:
-    theme: default
+    theme: nasa.scss
     toc: true
