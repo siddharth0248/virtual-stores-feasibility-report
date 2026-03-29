@@ -2,13 +2,14 @@
 title: "Contributing"
 ---
 
-We welcome PRs to this repo from anyone. If you open a PR with new or revised content, please add yourself to the authors list in `index.qmd`.
+**We welcome PRs to this repo from anyone. If you open a PR with new or revised content, please add yourself to the authors list in `index.qmd`.**
 
 This site uses [Quarto](https://quarto.org/) to generate website pages using markdown and jupyter notebooks.
 
 ## Adding pages
 
 To add a new page:
+
 1. Create new `.qmd` or `.ipynb` file
 2. Add the new page to the `sidebar` section in `_quarto.yml` so it shows up in the sidebar navigation
 
