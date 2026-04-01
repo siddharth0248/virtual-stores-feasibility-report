@@ -7,6 +7,7 @@ website:
   sidebar:
     pinned: true
     align: center
+    title: "Virtual Stores Feasibility Report"
     logo: graphics/nasa-logo.png
     contents:
       - href: index.qmd

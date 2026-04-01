@@ -59,13 +59,16 @@ $callout-color-important: $nasa-red;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
 
 // Sidebar styling
+.sidebar-logo {
+  max-width: 50%;
+}
+
 .sidebar {
   background-color: $white !important;
 
   .sidebar-title a {
     color: $nasa-dark !important;
     font-family: $headings-font-family;
-    font-weight: 700;
     letter-spacing: 0.02em;
   }
 
