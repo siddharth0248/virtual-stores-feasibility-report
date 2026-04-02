@@ -34,7 +34,17 @@ The PO.DAAC VDS implementation model represents a mature approach and is recomme
 
 ## Developing implementations
 
-### Example 1: Air quality and radiance satellite data — ASDC
+### Example 2: Synthetic Aperture Radar (NISAR)
+
+* **Data type:** Synthetic aperture radar products
+* **Virtualization approach:** TBD
+* **Status:** In development
+* **Owner:** Joe Kennedy
+
+Synthetic aperture radar products from ASF are an active area of development for virtual store approaches.
+
+
+### Example 3: Air quality and radiance satellite data — ASDC
 
 * **Data type:** Air quality satellite data (TEMPO L3 NO₂); surface spectral radiance (PREFIRE)
 * **Virtualization approach:** Icechunk in S3 (TEMPO); Kerchunk in S3 (PREFIRE)
@@ -55,14 +65,6 @@ A month of TEMPO L3 V04 NO₂ granules (January 2026, ~30 GB) was consolidated i
 
 A parallel proof of concept uses Kerchunk to provide virtualized access to PREFIRE surface spectral radiance data. A [demo notebook](https://github.com/nasa/ASDC_Data_and_User_Services/blob/main/PREFIRE/additional_drafts/read-references-for-PREFIRE-from-s3.ipynb) is available.
 
-### Example 2: Synthetic Aperture Radar (NISAR)
-
-* **Data type:** Synthetic aperture radar products
-* **Virtualization approach:** TBD
-* **Status:** In development
-* **Owner:** Joe Kennedy
-
-Synthetic aperture radar products from ASF are an active area of development for virtual store approaches.
 
 ### L2 Collections at PODAAC
 
