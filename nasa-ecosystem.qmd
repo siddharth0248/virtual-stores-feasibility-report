@@ -17,4 +17,4 @@ Virtual stores provide a uniform interface to archival data through the Zarr dat
 
 ## Discovery and integration with CMR
 
-[ADDME]
+[ADDME] - see governance.qmd for discussion of metadata placement standards

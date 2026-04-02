@@ -13,7 +13,7 @@ This guide is intended for data providers and engineers who are new to virtual s
 
 Before virtualizing, document:
 
-- File format (NetCDF, HDF5, GeoTIFF, etc.)
+- File format (NetCDF, HDF5, GeoTIFF, etc.) and any data hierarchy
 - Grid structure (uniform, non-uniform, swath)
 - Typical file sizes and granule counts
 - Primary user access patterns
