@@ -1,12 +1,23 @@
 ---
-title: "Virtual Stores at NASA"
-subtitle: "Unifying access to NASA datasets"
-authors: Aimee Barciauskas, Ed Armstrong
+title: Virtual Stores at NASA
+subtitle: Unifying access to NASA datasets
+authors: Aimee Barciauskas, Ed Armstrong, Amy Steiker
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.17.3
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 ⚠️ UNDER DEVELOPMENT ⚠️
 
-## Vision: NASA datasets accessible through a single entrypoint
+## Vision: Whole NASA datasets accessible through a single entrypoint
 
 <img style="height: 150px; margin: 0px auto; display: block" alt="Simple Virtual Zarr Graphic" src="./graphics/simple-virtual-zarr.svg" />
 
@@ -18,14 +29,15 @@ Virtual stores deliver a single entrypoint to a dataset comprised of many files.
 
 ## What are virtual stores and what do they enable?
 
-Core to virtual store technology is lightweight metadata pointing to data byte ranges in existing files. Virtual store technology enables data users to access subsets of large scientific datasets without downloading, scanning and pre-processing any files. 
+Core to virtual store technology is lightweight metadata pointing to data byte ranges in existing files. Virtual store technology enables data users to access subsets of large scientific datasets without downloading, scanning, or pre-processing any files. 
 
 ## Benefits for data users
 
-- Logical dataset access access large number of files, without downloading any data
+- Logical dataset access across a large number of files, without downloading any data, and regardless of local or in-region compute location 
 - Consistent access patterns across diverse data types
 
 ## Benefits for data providers and NASA
 
 - Cost savings through reduced egress and compute
 - Providing analysis-ready access to existing archives without reformatting
+
