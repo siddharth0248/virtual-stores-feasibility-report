@@ -70,3 +70,11 @@ The same way, we can use `icechunk_store` to open it using xarray and visualize 
 ```python
 ds = xr.open_zarr(icechunk_store, consolidated=False, zarr_format=3)
 ```
+
+[Expand]
+
+This section will describe how virtual stores integrate with CMR's
+existing discovery infrastructure, including how stores could be
+represented within UMM metadata models and surfaced through
+Earthdata Search. For the related governance decisions on metadata
+placement standards, see [Governance](governance.qmd#metadata-placement-standards).
