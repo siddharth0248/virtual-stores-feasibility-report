@@ -17,7 +17,7 @@ Virtual stores provide a uniform interface to archival data through the Zarr dat
 
 ## Discovery and integration with CMR
 
-[ADDME]
+[Expand]
 
 This section will describe how virtual stores integrate with CMR's
 existing discovery infrastructure, including how stores could be
