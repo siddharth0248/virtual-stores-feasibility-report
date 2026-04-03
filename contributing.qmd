@@ -1,5 +1,16 @@
 ---
-title: "Contributing"
+title: Contributing
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.17.3
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 **We welcome PRs to this repo from anyone. If you open a PR with new or revised content, please add yourself to the authors list in `index.qmd`.**

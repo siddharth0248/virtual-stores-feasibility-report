@@ -1,5 +1,16 @@
 ---
-title: "Executive Summary"
+title: Executive Summary
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.17.3
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 ## Purpose of this report
@@ -8,6 +19,7 @@ This report assesses the current state and future direction of virtual store tec
 
 ## Summary of recommendations and current state
 
-Virtual store technology is ready for production use with consistently gridded data and is actively being developed for more complex data types. Key recommendations include adopting Icechunk, GeoZarr and multiscales standards, engaging with any evolving chunk manifest protocol, planning for EGIS integration, and addressing governance gaps.
+Virtual store technology is ready for production use with consistently gridded data and is actively being developed for more complex data types. Key recommendations include adopting Icechunk, GeoZarr and multiscales standards, engaging with any evolving chunk manifest protocol, planning for Earthdata GIS (EGIS) integration, standardizing CMR collection-level metadata, and addressing governance gaps.
 
 See the [Recommendations](recommendations.qmd) section for the full summary.
+

@@ -1,5 +1,16 @@
 ---
-title: "Technical Overview of Virtual Stores"
+title: Technical Overview of Virtual Stores
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.17.3
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 ## Core concepts
@@ -7,9 +18,10 @@ title: "Technical Overview of Virtual Stores"
 [ADD ME: DIAGRAM]
 
 * **[Zarr](https://zarr.dev/)** is a chunked, compressed multi-dimensional array specification. Zarr is designed for cloud-native (network-addressable chunks in object storage) access. Zarr is the proposed specification for virtual stores at NASA.
-* **Chunk manifests** are lightweight metadata structures that describe a mapping from logical data space to where that data is stored. Another term for chunk manifests is an "indirection layer". Icechunk and Kerchunk are 2 common implementations of chunk manifests.
+* **Chunk manifests** are lightweight metadata structures that describe a mapping from logical data space to where that data is stored. Another term for chunk manifests is an "indirection layer". Icechunk, Kerchunk, and DMR++ are common implementations of chunk manifests.
 * **[Icechunk](https://icechunk.io/)** is a transactional storage engine for Zarr arrays. Icechunk stores chunk manifests which it calls [virtual datasets](https://icechunk.io/en/stable/virtual/).
 * **Kerchunk** is an early approach to creating chunk manifests (what it calls reference files) which maps virtual Zarr array coordinates to byte ranges in existing files using the JSON or Parquet file formats for persistence.
 * **VirtualiZarr** is a library for generating chunk manifests. Format-specific parsers are used to read chunk information and generate in-memory chunk manifests. VirtualiZarr can then write those chunk manifests to icechunk or kerchunk.
 * **[GeoZarr](https://geozarr.org/)** extends Zarr with geospatial conventions. including coordinate reference systems and spatial metadata. Multiscale representations allow efficient access at varying levels of aggregation.
+
 
