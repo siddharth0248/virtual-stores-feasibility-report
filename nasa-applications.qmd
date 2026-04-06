@@ -11,9 +11,10 @@ This page collects worked examples of virtual store implementations, serving as 
 | PO.DAAC | 10+ datasets | See [Using Virtual Datasets](https://podaac.github.io/tutorials/quarto_text/UsingVirtualDatasets.html) | [Virtual Data Set Starter Notebook](https://podaac.github.io/tutorials/notebooks/Advanced_cloud/using_vds_starter.html) |
 | VEDA    | RASI         | s3://nasa-waterinsight/virtual-zarr-store/icechunk/RASI/                                                         | [Github Repo](https://github.com/virtual-zarr/rasi-icechunk)                                                                           |
 | VEDA    | NLDAS        | s3://nasa-waterinsight/virtual-zarr-store/NLDAS-3-icechunk/                                                      | [Github Repo](https://github.com/virtual-zarr/nldas-icechunk)                                                                      |
-| VEDA    | GEOS-CF      |                                                                                                                  |                                                                                                                         |                          
+| VEDA    | GEOS-CF      |                                                                                                                  |                                                                                                                         |
 | ASDC    | TEMPO        | `s3://asdc-prod-public/virtual-reference-docs/TEMPO_L3_V04_icechunk_for_202601/`                                                      | [Demo Notebook](https://github.com/nasa/ASDC_Data_and_User_Services/blob/main/TEMPO/additional_drafts/read-references-for-TEMPO-from-s3-icechunk.ipynb)                                                                      |
-| ASDC    | PREFIRE        | `s3://asdc-prod-public/virtual-reference-docs/PREFIRE_SAT2_3-SFC-SORTED-ALLSKY_R01/prefire-monthly-kerchunk_created20250819.json`                                                      | [Demo Notebook](https://github.com/nasa/ASDC_Data_and_User_Services/blob/main/PREFIRE/additional_drafts/read-references-for-PREFIRE-from-s3.ipynb)                                                                      |
+| ASDC    | PREFIRE      | `s3://asdc-prod-public/virtual-reference-docs/PREFIRE_SAT2_3-SFC-SORTED-ALLSKY_R01/prefire-monthly-kerchunk_created20250819.json`                                                      | [Demo Notebook](https://github.com/nasa/ASDC_Data_and_User_Services/blob/main/PREFIRE/additional_drafts/read-references-for-PREFIRE-from-s3.ipynb)                                                                      |
+| ASF     |              | See `RelatedUrls` with `"Format": "Zarr"` in [C3294057315-ASF](https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C3294057315-ASF) | Powers the [OPERA Displacement Portal](https://displacement.asf.alaska.edu/#/) |
 
 ## Mature implementations                                                                                   |
 
@@ -24,7 +25,7 @@ This page collects worked examples of virtual store implementations, serving as 
 * **Status:** Production
 * **Owners:** Ed Armstrong and Dean Henze
 
-Collection-level aggregated chunk manifests have been successfully implemented at PO.DAAC for consistently gridded Level 3 and 4 datasets. To date a total of 10 PO.DAAC datasets have been virtualized as detailed in a chapter "Using Virtual Datasets" in the [PO.DAAC online cookbook](https://podaac.github.io/tutorials/quarto_text/UsingVirtualDatasets.html). 
+Collection-level aggregated chunk manifests have been successfully implemented at PO.DAAC for consistently gridded Level 3 and 4 datasets. To date a total of 10 PO.DAAC datasets have been virtualized as detailed in a chapter "Using Virtual Datasets" in the [PO.DAAC online cookbook](https://podaac.github.io/tutorials/quarto_text/UsingVirtualDatasets.html).
 
 One of the primary advantages of using virtual data stores (VDS) is users can interact with entire logical datasets without any preprocessing. Users' Jupyter notebooks and Python scripts can bypass the task of downloading, wrangling and merging data from many individual files.
 
@@ -32,16 +33,32 @@ Take for example one of PO.DAAC’s gridded sea surface temperature (SST) datase
 
 The PO.DAAC VDS implementation model represents a mature approach and is recommended as a baseline implementation for similar data types across other DAACs.
 
+### Example 2: OPERA Displacement portal — ASF
+
+* **Data type:** Frame-based, L3 radar line-of-site displacements
+* **Virtualization approach:** Granule chunk manifests (Kerchunk) and frame-aggregated chunk manifests (Kerchunk)
+* **Status:** Production
+* **Owners:** Kim Fairbanks (technical PoC), Kathleen Kristenson (Portal), Cassandra Wagner (Kerchunk ingest)
+
+The [OPERA DISP-S1](https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/) products provide surface deformation time series data over much of North and Central America from 2016 onward. These products are Level-3 products derived from Sentinel-1 Synthetic Aperture Radar (SAR) data, and are a powerful tool for identifying areas of subsidence and uplift. Many use-cases for these products are time-series based, where users want to understand the deformation pattern of that area through time. To meet this user need, the OPERA project with ASF DAAC developed the [Opera Displacement Portal](https://displacement.asf.alaska.edu/) which plots the short-wavelength displacement time series for any point location.
+
+ The time-series view into the data is provided by kerchunk-based virtual Zarr stores. Each OPERA DISP-S1 granule is provided as geostationary frames in netCDF-4 format by the OPERA project, where each granule is associated with only one frame, but a frame is associated with a "stack" or granules over time. Upon ingest, ASF DAAC creates a kerchunk-based virtual zarr store of each individual granule, and then aggregates just the short-wavelength variable from each granule within a frame into a kerchunk-based virtual zarr time series stack. Both the individual-granule zarr sore and the associated frame time-series stack are reported in the granule's UMM metadata as a related URL and is discoverable via standard NASA Earthdata discovery and access tools.
+
+The ASF virtual Zarr store implementation model represents a mature approach and is recommended as a baseline implementation for similar dataset types across other DAACs. This model is easily adapted to any framed-dataset where users would benefit from a time-series view into the data.
+
+
 ## Developing implementations
 
-### Example 2: Synthetic Aperture Radar (NISAR)
+### Example 2: NISAR Geocoded Synthetic Aperture Radar products
 
-* **Data type:** Synthetic aperture radar products
-* **Virtualization approach:** TBD
+* **Data type:** Geocoded NISAR synthetic aperture radar products
+* **Virtualization approach:** Granule and frame aggregated chunk manifests (IceChunk)
 * **Status:** In development
-* **Owner:** Joe Kennedy
+* **Owner:** Joseph H. Kennedy (Prototype)
 
-Synthetic aperture radar products from ASF are an active area of development for virtual store approaches.
+ASF is looking to develop virtual Zarr stores for time-series analyses of the [L2+ Geocoded NISAR products](https://nisar-docs.asf.alaska.edu/products-overview/). Building off of ASF's experience with the OPERA Displacement portal (described above) and Joseph's experience on the [ITS_LIVE project](https://its-live.jpl.nasa.gov/) (which uses Zarr datacubes to power a time-series portal), ASF plans to provide both granule-level virtual data stores and frame-based virtual data stores.
+
+There are, however, some likely changes to how we approach this from how the OPERA displacement portal was developed. Primarily, since there are 6 Geocoded NISAR products at this time, we plan on creating a CMR collection for the NISAR frames -- each frame granule would have spatial metadata describing the footprint of the NISAR frame and data links to a virtual zarr time-series stack for every virtualized product. This would allow users to do a fast spatial search for an area of interest, and easily load in the entire time-series for the product(s) they are interested in. We will also use icechunk as the virtualization method because  it support appending -- the aggregation step to append newly acquired data into the virtual zarr time-series stacks is resource intensive for the OPERA DISP-S1 kerchunks, requiring a full recreation of the virtual zarr time-series stacks every time new data is added.
 
 ### Example 3: Generating and Distributing Manifest Files at GES DISC
 
@@ -99,13 +116,12 @@ monthly-aggregated PREFIRE surface emissivity data. A
 [demo notebook](https://github.com/nasa/ASDC_Data_and_User_Services/blob/main/PREFIRE/additional_drafts/read-references-for-PREFIRE-from-s3.ipynb)
 is available. Kerchunk was chosen for this proof of concept to
 explore and develop best practices for virtualizing, as Kerchunk
-allows for more straightforward inspection and debugging of the 
-references in JSON. The next step is to build an Icechunk store in S3 
-for the same dataset and compare the user experience and performance 
+allows for more straightforward inspection and debugging of the
+references in JSON. The next step is to build an Icechunk store in S3
+for the same dataset and compare the user experience and performance
 of the two approaches.
 
 
 ### L2 Collections at PODAAC
 
 Virtualized L2 collections are currently under development at PO.DAAC.
-
