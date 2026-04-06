@@ -16,7 +16,7 @@ This page collects worked examples of virtual store implementations, serving as 
 | ASDC    | PREFIRE      | `s3://asdc-prod-public/virtual-reference-docs/PREFIRE_SAT2_3-SFC-SORTED-ALLSKY_R01/prefire-monthly-kerchunk_created20250819.json`                                                      | [Demo Notebook](https://github.com/nasa/ASDC_Data_and_User_Services/blob/main/PREFIRE/additional_drafts/read-references-for-PREFIRE-from-s3.ipynb)                                                                      |
 | ASF     |              | See `RelatedUrls` with `"Format": "Zarr"` in [C3294057315-ASF](https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C3294057315-ASF) | Powers the [OPERA Displacement Portal](https://displacement.asf.alaska.edu/#/) |
 
-## Mature implementations                                                                                   |
+## Mature implementations
 
 ### Example 1: Consistently gridded data — PODAAC
 
@@ -33,19 +33,18 @@ Take for example one of PO.DAAC’s gridded sea surface temperature (SST) datase
 
 The PO.DAAC VDS implementation model represents a mature approach and is recommended as a baseline implementation for similar data types across other DAACs.
 
-### Example 2: OPERA Displacement portal — ASF
+### Example 2: OPERA displacement portal — ASF
 
 * **Data type:** Frame-based, L3 radar line-of-site displacements
 * **Virtualization approach:** Granule chunk manifests (Kerchunk) and frame-aggregated chunk manifests (Kerchunk)
 * **Status:** Production
-* **Owners:** Kim Fairbanks (technical PoC), Kathleen Kristenson (Portal), Cassandra Wagner (Kerchunk ingest)
+* **Owners:** Kim Fairbanks (technical poc), Kathleen Kristenson (portal), Cassandra Wagner (kerchunk ingest)
 
-The [OPERA DISP-S1](https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/) products provide surface deformation time series data over much of North and Central America from 2016 onward. These products are Level-3 products derived from Sentinel-1 Synthetic Aperture Radar (SAR) data, and are a powerful tool for identifying areas of subsidence and uplift. Many use-cases for these products are time-series based, where users want to understand the deformation pattern of that area through time. To meet this user need, the OPERA project with ASF DAAC developed the [Opera Displacement Portal](https://displacement.asf.alaska.edu/) which plots the short-wavelength displacement time series for any point location.
+The [OPERA DISP-S1](https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/) products provide surface deformation time series data over much of North and Central America from 2016 onward. These products are Level-3 products derived from Sentinel-1 synthetic aperture radar (SAR) data, and are a powerful tool for identifying areas of subsidence and uplift. Many use-cases for these products are time-series based, where users want to understand the deformation pattern of that area through time. To meet this user need, the OPERA project and ASF DAAC developed the [Opera Displacement Portal](https://displacement.asf.alaska.edu/) which plots the short-wavelength displacement time series for any point location.
 
- The time-series view into the data is provided by kerchunk-based virtual Zarr stores. Each OPERA DISP-S1 granule is provided as geostationary frames in netCDF-4 format by the OPERA project, where each granule is associated with only one frame, but a frame is associated with a "stack" or granules over time. Upon ingest, ASF DAAC creates a kerchunk-based virtual zarr store of each individual granule, and then aggregates just the short-wavelength variable from each granule within a frame into a kerchunk-based virtual zarr time series stack. Both the individual-granule zarr sore and the associated frame time-series stack are reported in the granule's UMM metadata as a related URL and is discoverable via standard NASA Earthdata discovery and access tools.
+ The time-series view into the data is provided by kerchunk-based virtual Zarr stores. Each OPERA DISP-S1 granule is provided as geostationary frames in netCDF-4 format by the OPERA project, where each granule is associated with only one frame, but a frame is associated with a "stack" or granules over time. Upon ingest, ASF DAAC creates a kerchunk-based virtual zarr store of each individual granule, and then aggregates just the short-wavelength variable from each granule within a frame into a kerchunk-based virtual zarr time series stack. Both the individual-granule zarr store and the associated frame time-series stack are reported in the granule's UMM metadata as a related URL and is discoverable via standard NASA Earthdata discovery and access tools.
 
 The ASF virtual Zarr store implementation model represents a mature approach and is recommended as a baseline implementation for similar dataset types across other DAACs. This model is easily adapted to any framed-dataset where users would benefit from a time-series view into the data.
-
 
 ## Developing implementations
 
