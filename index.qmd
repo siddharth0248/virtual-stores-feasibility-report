@@ -17,7 +17,7 @@ jupyter:
 
 ⚠️ UNDER DEVELOPMENT ⚠️
 
-## Vision: Whole NASA datasets accessible through a single entrypoint
+## Vision: NASA datasets accessible through a single entrypoint
 
 <img style="height: 150px; margin: 0px auto; display: block" alt="Simple Virtual Zarr Graphic" src="./graphics/simple-virtual-zarr.svg" />
 
