@@ -9,7 +9,7 @@ Virtual stores provide a uniform interface to archival data through the Zarr dat
 
 ## Integration with EGIS
 
-[ADDME: @abarciauskas-bgse]
+Access to NASA data through Geographic Information Systems (GIS) is essential for supporting the agency’s broad user community. [Earthdata GIS (EGIS)](https://gis.earthdata.nasa.gov/portal/home/index.html) is NASA’s dedicated GIS platform. Integrating EGIS with virtual stores will ensure that both users and developers benefit from the foundational work to design and deliver virtual views into complex NASA data volumes.
 
 ## Integration with Harmony
 
