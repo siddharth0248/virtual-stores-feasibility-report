@@ -1,11 +1,7 @@
 ---
 title: "Virtual Stores at NASA"
 subtitle: "Unifying access to NASA datasets"
-<<<<<<< HEAD
-authors: Aimee Barciauskas, Ed Armstrong, Amy Steiker, Owen Littlejohns, Daniel Kaufman, Chris Battisto, Hailiang Zhang, Christine Smit, Jack McNelis, Luis Lopez, Siddharth Chaudhary
-=======
-authors: Aimee Barciauskas, Ed Armstrong, Amy Steiker, Owen Littlejohns, Daniel Kaufman, Chris Battisto, Hailiang Zhang, Christine Smit, Jack McNelis, Luis Lopez, Joseph H. Kennedy, Kim Fairbanks
->>>>>>> 684216ef3c4652b40c07facf31baebcbf2919a53
+authors: Aimee Barciauskas, Ed Armstrong, Amy Steiker, Owen Littlejohns, Daniel Kaufman, Chris Battisto, Hailiang Zhang, Christine Smit, Jack McNelis, Luis Lopez, Siddharth Chaudhary, Joseph H. Kennedy, Kim Fairbanks
 title-block-style: plain
 ---
 
