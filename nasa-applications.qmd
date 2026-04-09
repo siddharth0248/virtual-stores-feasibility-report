@@ -36,10 +36,10 @@ The PO.DAAC VDS implementation model represents a mature approach and is recomme
 
 ### Example 2: OPERA displacement portal — ASF
 
-* **Data type:** Frame-based, L3 radar line-of-site displacements
-* **Virtualization approach:** Granule chunk manifests (Kerchunk) and frame-aggregated chunk manifests (Kerchunk)
+* **Data type:** Framed L3 radar line-of-site displacements
+* **Virtualization approach:** Granule chunk manifests (Kerchunk) and frame-level chunk manifests (Kerchunk)
 * **Status:** Production
-* **Owners:** Kim Fairbanks (technical poc), Kathleen Kristenson (portal), Cassandra Wagner (kerchunk ingest)
+* **Owners:** Kim Fairbanks (technical poc), Kathleen Kristenson (portal), Cassandra Wagner (kerchunk ingest), Luca Cinquini (OPERA project)
 
 The [OPERA DISP-S1](https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/) products provide surface deformation time series data over much of North and Central America from 2016 onward. These products are Level-3 products derived from Sentinel-1 synthetic aperture radar (SAR) data, and are a powerful tool for identifying areas of subsidence and uplift. Many use cases for these products are time-series-based, where users want to understand the deformation pattern of that area through time. To meet this user need, the OPERA project and ASF DAAC developed the [Opera Displacement Portal](https://displacement.asf.alaska.edu/), which plots the short-wavelength displacement time series for any point location.
 
